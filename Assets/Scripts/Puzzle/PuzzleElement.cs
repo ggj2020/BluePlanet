@@ -18,8 +18,12 @@ public class PuzzleElement : MonoBehaviour
         yield return new WaitForSeconds(contactReDetectSeconds);
         if ( collider != null && otherCollider != null && collider.Distance(otherCollider).distance <= 0 )
         {
-            Destroy(collider.gameObject);
-            Destroy(otherCollider.gameObject);
+            DestroyGameObjects(collider.gameObject, otherCollider.gameObject);
         }
+    }
+
+    private void DestroyGameObjects(params GameObject[] gameObjects)
+    {
+        gameObjects.ToList().ForEach(Destroy);
     }
 }
