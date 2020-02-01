@@ -16,6 +16,7 @@ public class PuzzleWorld : MonoBehaviour
     void Update()
     {
 #if UNITY_EDITOR
+		if ( !Statics.bPause ) return;
         if( Input.GetKeyDown(KeyCode.Return) )
         {
             EventManager.TriggerEvent(new ShakePuzzleEvent());

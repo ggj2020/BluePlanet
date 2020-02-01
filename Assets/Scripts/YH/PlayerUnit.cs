@@ -71,6 +71,8 @@ public partial class PlayerUnit : RunObject
 
     private void Update()
     {
+        if ( !Statics.bPause ) return;
+
         //if ( Input.GetKeyDown( KeyCode.LeftArrow ) )
         //    OnInputDown( INPUT.MOVE_LEFT );
         //if ( Input.GetKeyDown( KeyCode.RightArrow ) )
@@ -87,6 +89,8 @@ public partial class PlayerUnit : RunObject
     }
     private void FixedUpdate()
     {
+        if ( !Statics.bPause ) return;
+
         FUpdateMovement();
         FUpdateFoothold();
     }

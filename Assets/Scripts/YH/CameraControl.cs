@@ -19,6 +19,8 @@ public partial class CameraControl : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if ( !Statics.bPause ) return;
+
         var targetPosition = playerUnit.position;
         targetPosition.z = distanceToCharacter;
         targetPosition.x += offset.x;
