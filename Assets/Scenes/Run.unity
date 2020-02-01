@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
+  m_IndirectSpecularColor: {r: 0.28502676, g: 0.37139347, b: 0.49601015, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 66901230}
   - component: {fileID: 66901229}
   - component: {fileID: 66901228}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 3
   m_TagString: Foothold
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 169258128}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Garbage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 263412859}
   - component: {fileID: 263412858}
   - component: {fileID: 263412857}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 9
   m_TagString: Foothold
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 334610452}
   - component: {fileID: 334610451}
   - component: {fileID: 334610450}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 0
   m_TagString: Garbage
   m_Icon: {fileID: 0}
@@ -480,7 +480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 398807368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 441048178}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: World
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 552226628}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Float
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 587406046}
   - component: {fileID: 587406045}
   - component: {fileID: 587406044}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 10
   m_TagString: Foothold
   m_Icon: {fileID: 0}
@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 865619479}
   - component: {fileID: 865619478}
   - component: {fileID: 865619477}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 6
   m_TagString: Foothold
   m_Icon: {fileID: 0}
@@ -850,7 +850,7 @@ GameObject:
   - component: {fileID: 882129251}
   - component: {fileID: 882129250}
   - component: {fileID: 882129249}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 7
   m_TagString: Foothold
   m_Icon: {fileID: 0}
@@ -956,7 +956,7 @@ GameObject:
   - component: {fileID: 990958765}
   - component: {fileID: 990958764}
   - component: {fileID: 990958763}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 2
   m_TagString: Foothold
   m_Icon: {fileID: 0}
@@ -1128,7 +1128,7 @@ GameObject:
   - component: {fileID: 1254353708}
   - component: {fileID: 1254353707}
   - component: {fileID: 1254353706}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 4
   m_TagString: Foothold
   m_Icon: {fileID: 0}
@@ -1234,7 +1234,7 @@ GameObject:
   - component: {fileID: 1265291545}
   - component: {fileID: 1265291544}
   - component: {fileID: 1265291547}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 1
   m_TagString: Foothold
   m_Icon: {fileID: 0}
@@ -1340,7 +1340,7 @@ GameObject:
   - component: {fileID: 1411358972}
   - component: {fileID: 1411358971}
   - component: {fileID: 1411358974}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,7 +1465,7 @@ GameObject:
   - component: {fileID: 1415942859}
   - component: {fileID: 1415942858}
   - component: {fileID: 1415942857}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 5
   m_TagString: Foothold
   m_Icon: {fileID: 0}
@@ -1571,7 +1571,7 @@ GameObject:
   - component: {fileID: 1673102418}
   - component: {fileID: 1673102417}
   - component: {fileID: 1673102416}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 11
   m_TagString: Foothold
   m_Icon: {fileID: 0}
@@ -1677,7 +1677,8 @@ GameObject:
   - component: {fileID: 1687258582}
   - component: {fileID: 1687258586}
   - component: {fileID: 1687258587}
-  m_Layer: 0
+  - component: {fileID: 1687258583}
+  m_Layer: 9
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1692,6 +1693,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_Enabled: 1
+--- !u!114 &1687258583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687258581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
@@ -1723,7 +1740,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 535
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1803,7 +1820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894899828}
   - component: {fileID: 1894899829}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Foothold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1851,7 +1868,7 @@ GameObject:
   - component: {fileID: 1953433183}
   - component: {fileID: 1953433182}
   - component: {fileID: 1953433185}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 0
   m_TagString: Foothold
   m_Icon: {fileID: 0}
@@ -1957,7 +1974,7 @@ GameObject:
   - component: {fileID: 2042071666}
   - component: {fileID: 2042071665}
   - component: {fileID: 2042071664}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 8
   m_TagString: Foothold
   m_Icon: {fileID: 0}
