@@ -1,24 +1,65 @@
 ﻿using UnityEngine;
 using System.Linq;
 using System.Collections;
+using TMPro;
+using UnityEngine.EventSystems;
 
-public class PuzzleElement : MonoBehaviour
+[RequireComponent(typeof(Collider2D))]
+public class PuzzleElement : MonoBehaviour, IPointerClickHandler
 {
-    static private float contactReDetectSeconds = 2f;
+    enum PuzzleElementState
+    {
+        Alone,
+        Contact,
+    }
+
+    [SerializeField] private TextMeshPro textMeshPro = null;
+
+    private GameObject _contactedGameObject;
+    private GameObject contactedGameObject
+    {
+        get
+        {
+            return this._contactedGameObject;
+        }
+        set 
+        {
+            this._contactedGameObject = value;
+            this.textMeshPro.text = (value != null ? "TOUCH" : "");
+        }
+    }
+
+    void Start()
+    {
+        this.contactedGameObject = null;
+    }
+
     void OnCollisionStay2D(Collision2D collision2d)
     {
         if ( gameObject.name == collision2d.gameObject.name )
         {
-            StartCoroutine(DetectContactAfterFewSeconds(collision2d.collider, collision2d.otherCollider));
+            this.contactedGameObject = collision2d.collider.gameObject;
         }
     }
 
-    private IEnumerator DetectContactAfterFewSeconds(Collider2D collider, Collider2D otherCollider)
+    void OnCollisionExit2D(Collision2D collision2d)
     {
-        yield return new WaitForSeconds(contactReDetectSeconds);
-        if ( collider != null && otherCollider != null && collider.Distance(otherCollider).distance <= 0 )
+        if ( gameObject.name == collision2d.gameObject.name )
         {
-            DestroyGameObjects(collider.gameObject, otherCollider.gameObject);
+            this.contactedGameObject = null;
+        }
+    }
+
+    //Detect if a click occurs
+    public void OnPointerClick(PointerEventData pointerEventData)
+    {
+        if( this.contactedGameObject == null )
+        {
+            return;
+        }
+        else if ( this.contactedGameObject.name == gameObject.name )
+        {
+            DestroyGameObjects(gameObject, this.contactedGameObject);
         }
     }
 
