@@ -195,9 +195,7 @@ public partial class PlayerUnit : RunObject
             Garbage g = c.gameObject.GetComponent<Garbage>();
             if ( g && g.bActive )
             {
-                new GarbageAcquireEvent();
                 EventManager.TriggerEvent( new GarbageAcquireEvent( g.objectIndex ) );
-
                 g.Deactivate();
                 Destroy( c.gameObject );
             }
