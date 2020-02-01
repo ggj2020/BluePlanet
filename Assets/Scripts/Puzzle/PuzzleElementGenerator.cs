@@ -10,28 +10,28 @@ public class PuzzleElementGenerator : MonoBehaviour
         "Puzzle/Prefabs/Triangle"
     };
 
-    void Update()
+    void OnEnable()
     {
-        if( Input.GetKeyDown(KeyCode.Space) )
-        {
-            this.Generate();
-        }
-        if( Input.GetKeyDown(KeyCode.Return) )
-        {
-            this.Shake();
-        }
+        EventManager.StartListening(typeof(ShakePuzzleEvent), OnShake);
+        EventManager.StartListening(typeof(GeneratePuzzleEvent), OnGenerate);
     }
 
-    private void Generate()
+    void OnDisable()
     {
-        GameObject prefab = Resources.Load<GameObject>(elements.Pick());
-        Instantiate<GameObject>(prefab, transform);
+        EventManager.StopListening(typeof(ShakePuzzleEvent), OnShake);
+        EventManager.StopListening(typeof(GeneratePuzzleEvent), OnGenerate);
     }
 
-    private void Shake()
+    private void OnShake(IEvent param)
     {
         GetComponentsInChildren<Rigidbody2D>().ToList().ForEach((rigidBody2d) => {
             rigidBody2d.AddForce(new Vector2(Random.Range(-5f, 5f), Random.Range(5f, 10f)), ForceMode2D.Impulse);
         });
+    }
+
+    private void OnGenerate(IEvent param)
+    {
+        GameObject prefab = Resources.Load<GameObject>(elements.Pick());
+        Instantiate<GameObject>(prefab, transform);
     }
 }

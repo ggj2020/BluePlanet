@@ -464,6 +464,7 @@ GameObject:
   - component: {fileID: 476842468}
   - component: {fileID: 476842467}
   - component: {fileID: 476842469}
+  - component: {fileID: 476842470}
   m_Layer: 0
   m_Name: PuzzleWorld
   m_TagString: Untagged
@@ -547,6 +548,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2724f8ac637bd4d94b2edaf293a7eae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &476842470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476842466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33827abae2969484bb8cf89d0f00bcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &563576569

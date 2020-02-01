@@ -4,15 +4,9 @@ using System.Collections;
 using TMPro;
 using UnityEngine.EventSystems;
 
-// [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Collider2D))]
 public class PuzzleElement : MonoBehaviour, IPointerClickHandler
 {
-    enum PuzzleElementState
-    {
-        Alone,
-        Contact,
-    }
-
     [SerializeField] private TextMeshPro textMeshPro = null;
 
     private GameObject _contactedGameObject;
@@ -50,7 +44,6 @@ public class PuzzleElement : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    //Detect if a click occurs
     public void OnPointerClick(PointerEventData pointerEventData)
     {
         if( this.contactedGameObject == null )
