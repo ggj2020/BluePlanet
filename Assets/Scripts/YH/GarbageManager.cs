@@ -7,6 +7,7 @@ public partial class GarbageManager : MonoBehaviour
     public GameObject[] prefabGarbage;
 
     private int[] m_nGarbageDistribute;
+    private Queue<Garbage> m_qGarbage;
 }
 
 public partial class GarbageManager : MonoBehaviour
@@ -17,15 +18,30 @@ public partial class GarbageManager : MonoBehaviour
 
         Statics.garbageManager = this;
 
-        for ( int nIdx = 0; nIdx < transform.childCount; ++nIdx )
+        m_nGarbageDistribute = new int[ prefabGarbage.Length ];
+        m_qGarbage = new Queue<Garbage>();
+    }
+
+    private void FixedUpdate()
+    {
+        while ( m_qGarbage.Count < 10 )
         {
-            Transform tChild = transform.GetChild( nIdx );
-            m_ltFoothold.Add( tChild );
+
         }
     }
 
-    private void AllocNextGarbage()
+    private Garbage GetNextGarbage()
     {
+        Garbage g;
 
+        int nCountTotal = 0;
+        foreach( int nCount in m_nGarbageDistribute )
+        {
+            nCountTotal += nCount;
+        }
+
+        int nRand = Random.Range( 0, nCountTotal );
+        int nCountSum = 
+        if(nRand < )
     }
 }
