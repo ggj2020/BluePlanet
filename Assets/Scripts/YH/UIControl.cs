@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public partial class UIControl : MonoBehaviour
@@ -36,7 +37,7 @@ public partial class UIControl : MonoBehaviour
         BtnTitle.onClick.AddListener( () =>
         {
             // 타이틀로 가기
-            OnStageEnd();
+            SceneManager.LoadScene( "Menu", LoadSceneMode.Single );
         } );
     }
 
