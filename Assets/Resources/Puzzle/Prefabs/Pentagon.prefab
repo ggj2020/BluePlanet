@@ -215,8 +215,8 @@ GameObject:
   - component: {fileID: 6915516944431686750}
   - component: {fileID: 6915516944431686749}
   - component: {fileID: 6915516944431686748}
-  - component: {fileID: 6915516944431686747}
   - component: {fileID: -5441736113825198745}
+  - component: {fileID: -7117118169309224673}
   m_Layer: 8
   m_Name: Pentagon
   m_TagString: Untagged
@@ -310,7 +310,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &6915516944431686747
+--- !u!114 &-5441736113825198745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6915516944431686751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b4971c4946d4b278f86e8b712bb17c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 4199416404781495246}
+--- !u!60 &-7117118169309224673
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,7 +340,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1.6, y: 1.6}
     newSize: {x: 0.98, y: 0.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -335,47 +348,31 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.90999997, y: -0.03}
-      - {x: 0.95, y: 0.099999994}
-      - {x: 0.97999996, y: 0.19}
-      - {x: 0.97999996, y: 0.24}
-      - {x: 0.90999997, y: 0.31}
-      - {x: 0.71999997, y: 0.45}
-      - {x: 0.63, y: 0.51}
-      - {x: 0.41, y: 0.69}
-      - {x: 0.19, y: 0.85999995}
-      - {x: 0.02, y: 0.97999996}
-      - {x: -0.03, y: 0.97999996}
-      - {x: -0.19, y: 0.85999995}
-      - {x: -0.41, y: 0.69}
-      - {x: -0.63, y: 0.51}
-      - {x: -0.71999997, y: 0.45}
-      - {x: -0.97999996, y: 0.24}
-      - {x: -0.97999996, y: 0.16}
-      - {x: -0.93, y: 0.04}
-      - {x: -0.90999997, y: -0.03}
-      - {x: -0.75, y: -0.55}
-      - {x: -0.72999996, y: -0.62}
-      - {x: -0.71, y: -0.68}
-      - {x: -0.69, y: -0.75}
-      - {x: -0.66999996, y: -0.81}
-      - {x: -0.65, y: -0.88}
-      - {x: -0.63, y: -0.94}
-      - {x: -0.61, y: -0.98999995}
-      - {x: 0.59999996, y: -0.98999995}
-      - {x: 0.62, y: -0.96999997}
-      - {x: 0.65, y: -0.88}
-      - {x: 0.81, y: -0.35999998}
---- !u!114 &-5441736113825198745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6915516944431686751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30b4971c4946d4b278f86e8b712bb17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 4199416404781495246}
+    - - {x: 0.6081831, y: -0.34136772}
+      - {x: 0.6351708, y: -0.25170153}
+      - {x: 0.6543881, y: -0.17797844}
+      - {x: 0.7083508, y: 0.02026739}
+      - {x: 0.7099848, y: 0.09042369}
+      - {x: 0.6507924, y: 0.20601484}
+      - {x: 0.5426156, y: 0.306508}
+      - {x: 0.2911486, y: 0.53209317}
+      - {x: 0.02203732, y: 0.72332495}
+      - {x: -0.030779215, y: 0.70607156}
+      - {x: -0.046755455, y: 0.6943397}
+      - {x: -0.11983259, y: 0.64360577}
+      - {x: -0.17829917, y: 0.59708446}
+      - {x: -0.24559739, y: 0.54594535}
+      - {x: -0.6085785, y: 0.2604547}
+      - {x: -0.6976119, y: 0.1931917}
+      - {x: -0.72589076, y: 0.13779646}
+      - {x: -0.71453756, y: 0.090149865}
+      - {x: -0.6764807, y: -0.066416785}
+      - {x: -0.5869539, y: -0.3790107}
+      - {x: -0.50850177, y: -0.5865498}
+      - {x: -0.48578098, y: -0.68028504}
+      - {x: -0.46678743, y: -0.7302327}
+      - {x: -0.410395, y: -0.7550696}
+      - {x: 0.40929073, y: -0.7234897}
+      - {x: 0.46166548, y: -0.6962187}
+      - {x: 0.5178037, y: -0.62283295}
+      - {x: 0.5442258, y: -0.52207434}

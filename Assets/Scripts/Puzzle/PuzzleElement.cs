@@ -4,7 +4,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Collider2D))]
+// [RequireComponent(typeof(Collider2D))]
 public class PuzzleElement : MonoBehaviour, IPointerClickHandler
 {
     enum PuzzleElementState

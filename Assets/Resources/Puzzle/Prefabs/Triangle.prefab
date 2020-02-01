@@ -215,8 +215,8 @@ GameObject:
   - component: {fileID: 6816902153781172976}
   - component: {fileID: 6816902153781172941}
   - component: {fileID: 6816902153781172978}
-  - component: {fileID: 6816902153781172979}
   - component: {fileID: 8296794081747239510}
+  - component: {fileID: 3409996519368137992}
   m_Layer: 8
   m_Name: Triangle
   m_TagString: Untagged
@@ -310,7 +310,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &6816902153781172979
+--- !u!114 &8296794081747239510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816902153781172977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b4971c4946d4b278f86e8b712bb17c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 5971626334096826860}
+--- !u!60 &3409996519368137992
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,7 +340,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.02, y: 2.02}
+    oldSize: {x: 1.6, y: 1.6}
     newSize: {x: 0.98, y: 0.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -335,23 +348,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.01, y: 1}
-      - {x: -0.03, y: 0.98999995}
-      - {x: -1.01, y: -0.95}
-      - {x: -1.01, y: -1.01}
-      - {x: 1.01, y: -1.01}
-      - {x: 1.01, y: -0.97999996}
-      - {x: 0.03, y: 1}
---- !u!114 &8296794081747239510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6816902153781172977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30b4971c4946d4b278f86e8b712bb17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 5971626334096826860}
+    - - {x: -0.012620688, y: 0.6641206}
+      - {x: -0.088572554, y: 0.5168675}
+      - {x: -0.15804514, y: 0.37879264}
+      - {x: -0.29051334, y: 0.14468257}
+      - {x: -0.35486484, y: -0.0022467077}
+      - {x: -0.5329252, y: -0.36137405}
+      - {x: -0.63603395, y: -0.563742}
+      - {x: -0.71410227, y: -0.7192758}
+      - {x: -0.6551544, y: -0.7559504}
+      - {x: 0.6940507, y: -0.74941784}
+      - {x: 0.69553286, y: -0.6581845}
+      - {x: 0.04911268, y: 0.66026795}

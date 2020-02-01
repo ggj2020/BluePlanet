@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8138130658926618078}
   - component: {fileID: 8138130658926618067}
   - component: {fileID: 8138130658926618064}
-  - component: {fileID: 8138130658926618065}
   - component: {fileID: 8675507582533093492}
+  - component: {fileID: 1657932285291447746}
   m_Layer: 8
   m_Name: RoundedRectangle
   m_TagString: Untagged
@@ -106,7 +106,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &8138130658926618065
+--- !u!114 &8675507582533093492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138130658926618079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b4971c4946d4b278f86e8b712bb17c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 5195803730703487926}
+--- !u!60 &1657932285291447746
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,7 +136,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.02, y: 2.02}
+    oldSize: {x: 1.6, y: 1.6}
     newSize: {x: 0.98, y: 0.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -131,31 +144,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.90999997, y: 0.96}
-      - {x: 0.78999996, y: 1.01}
-      - {x: -0.78999996, y: 1.01}
-      - {x: -0.91999996, y: 0.97999996}
-      - {x: -1.01, y: 0.83}
-      - {x: -1.01, y: -0.78999996}
-      - {x: -0.96999997, y: -0.90999997}
-      - {x: -0.82, y: -1.01}
-      - {x: 0.81, y: -1.01}
-      - {x: 0.90999997, y: -0.96999997}
-      - {x: 1.01, y: -0.82}
-      - {x: 1.01, y: 0.84}
---- !u!114 &8675507582533093492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8138130658926618079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30b4971c4946d4b278f86e8b712bb17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 5195803730703487926}
+    - - {x: 0.70137644, y: 0.6674563}
+      - {x: 0.6182417, y: 0.7257769}
+      - {x: -0.62737775, y: 0.7293893}
+      - {x: -0.70137143, y: 0.6743012}
+      - {x: -0.7557634, y: 0.576688}
+      - {x: -0.75548184, y: -0.60065365}
+      - {x: -0.693868, y: -0.70562774}
+      - {x: -0.61904186, y: -0.7595434}
+      - {x: 0.61583346, y: -0.75734204}
+      - {x: 0.7246373, y: -0.69981736}
+      - {x: 0.765079, y: -0.6211168}
+      - {x: 0.7546911, y: 0.6038707}
 --- !u!1 &9172745456358272957
 GameObject:
   m_ObjectHideFlags: 0
