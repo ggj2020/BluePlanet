@@ -23,6 +23,7 @@ public partial class UIControl : MonoBehaviour
         BtnPause.onClick.AddListener( () => 
         {
             // 일시정지
+            Statics.soundManager.Play( AUDIOTYPE.BUTTONCLICK );
             UIPause.SetActive( true );
             Statics.bPause = true;
         } );
@@ -30,6 +31,7 @@ public partial class UIControl : MonoBehaviour
         BtnResume.onClick.AddListener( () =>
         {
             // 계속하기
+            Statics.soundManager.Play( AUDIOTYPE.BUTTONCLICK );
             UIPause.SetActive( false );
             Statics.bPause = false;
         } );
@@ -37,6 +39,7 @@ public partial class UIControl : MonoBehaviour
         BtnTitle.onClick.AddListener( () =>
         {
             // 타이틀로 가기
+            Statics.soundManager.Play( AUDIOTYPE.BUTTONCLICK );
             SceneManager.LoadScene( "Menu", LoadSceneMode.Single );
         } );
     }
