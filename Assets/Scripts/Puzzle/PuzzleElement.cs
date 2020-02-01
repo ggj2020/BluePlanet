@@ -46,6 +46,7 @@ public class PuzzleElement : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
+        Debug.Log("OnPointerClick");
         if( this.contactedGameObject == null )
         {
             return;

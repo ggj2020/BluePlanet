@@ -4,6 +4,7 @@ public class PuzzleWorld : MonoBehaviour
 {
     void Update()
     {
+#if UNITY_EDITOR
         if( Input.GetKeyDown(KeyCode.Return) )
         {
             EventManager.TriggerEvent(new ShakePuzzleEvent());
@@ -12,5 +13,6 @@ public class PuzzleWorld : MonoBehaviour
         {
             EventManager.TriggerEvent(new GeneratePuzzleEvent());
         }
+#endif
     }
 }

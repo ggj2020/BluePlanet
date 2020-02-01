@@ -52,15 +52,31 @@ public partial class PlayerUnit : RunObject
         OnStartGame();
     }
 
+    void OnEnable()
+    {
+        EventManager.StartListening(typeof(TryJumpEvent), OnTryJump);
+    }
+
+    void OnDisable()
+    {
+        EventManager.StopListening(typeof(TryJumpEvent), OnTryJump);
+    }
+
+    void OnTryJump(IEvent eventParameter)
+    {
+        OnInputDown(INPUT.JUMP_UP);
+    }
+
     private void Update()
     {
         //if ( Input.GetKeyDown( KeyCode.LeftArrow ) )
         //    OnInputDown( INPUT.MOVE_LEFT );
         //if ( Input.GetKeyDown( KeyCode.RightArrow ) )
         //    OnInputDown( INPUT.MOVE_RIGHT );
-
+#if UNITY_EDITOR
         if ( Input.GetKeyDown( KeyCode.Space ) )
             OnInputDown( INPUT.JUMP_UP );
+#endif
 
         //if ( Input.GetKeyUp( KeyCode.LeftArrow ) )
         //    OnInputUp( INPUT.MOVE_LEFT );
