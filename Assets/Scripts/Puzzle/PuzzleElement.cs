@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 using System.Linq;
-using System.Collections;
-using TMPro;
 using UnityEngine.EventSystems;
 
-// [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class PuzzleElement : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private TextMeshPro textMeshPro = null;
-
     private GameObject _contactedGameObject;
     private GameObject contactedGameObject
     {
@@ -18,16 +15,16 @@ public class PuzzleElement : MonoBehaviour, IPointerClickHandler
         }
         set 
         {
+            var material = GetComponent<SpriteRenderer>().material;
+            material.SetFloat("_OutlineBrightness", value == null ? 0f : 2.8f);
+            material.SetFloat("_OutlineWidth", value == null ? 0f : 0.0156f);
             this._contactedGameObject = value;
-            this.textMeshPro.text = (value != null ? "TOUCH" : "");
         }
     }
 
     void Start()
     {
         this.contactedGameObject = null;
-        // var randomScale = Random.Range(0.9f, 1.1f);
-        // this.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
     }
 
     void OnCollisionStay2D(Collision2D collision2d)

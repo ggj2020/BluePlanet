@@ -6,8 +6,8 @@ public class PuzzleElementGenerator : MonoBehaviour
 
     private string[] elements = new string[] {
         "Puzzle/Prefabs/Pentagon",
-        "Puzzle/Prefabs/RoundedRectangle",
-        "Puzzle/Prefabs/Triangle"
+        // "Puzzle/Prefabs/RoundedRectangle",
+        // "Puzzle/Prefabs/Triangle"
     };
 
     void OnEnable()
