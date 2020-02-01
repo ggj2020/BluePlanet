@@ -30,6 +30,8 @@ public partial class PlayerUnit : RunObject
 {
     private void Awake()
     {
+        Statics.playerUnit = this;
+
         m_vVel = Vector2Int.zero;
 
         m_lFhCurrent = new List<Foothold>();
@@ -95,10 +97,16 @@ public partial class PlayerUnit : RunObject
     {
         int nNewFootholdIdx = ( int )position.x;
         int nDiff = nNewFootholdIdx - m_nFootholdIdx;
-        if ( nDiff > 0 ) Statics.footholdManager.SwipeFoothold( false );
-        if ( nDiff < 0 ) Statics.footholdManager.SwipeFoothold( true );
+        if ( nDiff == 0 ) return;
 
         m_nFootholdIdx = nNewFootholdIdx;
+
+        if ( nDiff > 0 )
+        {
+            Statics.footholdManager.SwipeFoothold( false );
+            OnMoveToNextFoothold();
+        }
+        else Statics.footholdManager.SwipeFoothold( true );
     }
 
     public void OnInputDown( INPUT eInput )
@@ -141,6 +149,11 @@ public partial class PlayerUnit : RunObject
         }
     }
 
+    private void OnMoveToNextFoothold()
+    {
+        Statics.garbageManager.GenerateGarbage( position.x );
+    }
+
     private void OnTriggerEnter( Collider c )
     {
         if ( c.CompareTag( Constant.TAG_FOOTHOLD ) )
@@ -157,9 +170,9 @@ public partial class PlayerUnit : RunObject
         if ( c.CompareTag( Constant.TAG_GARBAGE ) )
         {
             Garbage g = c.gameObject.GetComponent<Garbage>();
-            if ( g )
+            if ( g && g.bActive )
             {
-                Debug.Log( $"{g.objectIndex} get!" );
+                //Debug.Log( $"{g.objectIndex} get!" );
                 g.Deactivate();
                 Destroy( c.gameObject );
             }

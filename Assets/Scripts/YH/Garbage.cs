@@ -4,15 +4,21 @@ public partial class Garbage : RunObject
 {
     public int objectIndex;
 
-    private bool m_bActive;
+    public bool bActive { get; private set; }
 }
 
 public partial class Garbage : RunObject
 {
     private void Awake()
     {
-        m_bActive = true;
+        bActive = true;
     }
 
-    public void Deactivate() { m_bActive = false; }
+    public void Deactivate() { bActive = false; }
+
+    private void FixedUpdate()
+    {
+        float fDiff = Statics.playerUnit.position.x - position.x;
+        if ( fDiff > 10 ) Destroy( gameObject );
+    }
 }
