@@ -9,8 +9,10 @@ public partial class CameraControl : MonoBehaviour
 
 public partial class CameraControl : MonoBehaviour
 {
-    private void Update()
+    private void FixedUpdate()
     {
-        transform.position = playerUnit.position + new Vector3( 0, 0, -10 );
+        Vector3 vNewPos = Vector3.Lerp( transform.position, playerUnit.position, 0.1f );
+        vNewPos.z = -10;
+        transform.position = vNewPos;
     }
 }
