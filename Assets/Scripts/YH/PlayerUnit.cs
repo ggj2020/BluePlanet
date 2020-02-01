@@ -234,8 +234,11 @@ public partial class PlayerUnit : RunObject
         m_bAttatchedOnFoothold = false;
         ++m_nJumpCount;
 
-        if ( m_nJumpCount == Constant.JUMPCOUNT_LIMIT ) 
-            EventManager.TriggerEvent( new ShakePuzzleEvent() );
+        if (m_nJumpCount == Constant.JUMPCOUNT_LIMIT)
+        {
+            EventManager.TriggerEvent(new ShakePuzzleEvent());
+            EventManager.TriggerEvent(new ShakeCamera());
+        }
     }
 
     private int GetFriction()

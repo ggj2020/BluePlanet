@@ -6,6 +6,15 @@ public interface IEvent{}
 public struct ShakePuzzleEvent : IEvent {}
 public struct GeneratePuzzleEvent : IEvent {}
 public struct TryJumpEvent : IEvent {}
+
+
+
+//My!!!
+public struct ShakeCamera : IEvent { }
+public struct SetCharacterHoveringState_Idle : IEvent { }
+public struct SetCharacterHoveringState_danger : IEvent { }
+
+
 public struct GarbageAcquireEvent : IEvent 
 {
     int garbageIdx;
