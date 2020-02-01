@@ -274,10 +274,10 @@ MonoBehaviour:
   - {fileID: 5101948023353624177, guid: d49059e5fd9eebc41b22bbe4bb9b0e66, type: 3}
   - {fileID: 3687666902231042958, guid: a15bb6a834da48342b1d874dfc37311f, type: 3}
   - {fileID: 2717807951380883768, guid: 8b7e2ee744366084a8ab3289a1c7fbd7, type: 3}
-  height_Lv1: 2
-  height_Lv2: 3
+  height_Lv1: 3
+  height_Lv2: 5
   offsetX: 5
-  garbageGap: 2
+  garbageGap: 3
 --- !u!1 &263412855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,6 +1575,7 @@ GameObject:
   - component: {fileID: 1411358972}
   - component: {fileID: 1411358971}
   - component: {fileID: 1411358974}
+  - component: {fileID: 1411358975}
   m_Layer: 0
   m_Name: PlayerUnit
   m_TagString: Untagged
@@ -1590,7 +1591,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411358969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 1.12, z: 0}
+  m_LocalPosition: {x: 7, y: 1.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 441048178}
@@ -1607,7 +1608,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.9, y: 1.9, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1411358972
 Rigidbody:
@@ -1664,7 +1665,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 29b31761524f14f478d6be14d4352be7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1687,6 +1688,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f56563b8a9f5e384982aaf8e7a281482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1411358975
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411358969}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b8979dc40a7cdfa4e90fa78ad2560c30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1415942855
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,7 +2079,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -2084,7 +2104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 2, z: -10}
+  m_LocalPosition: {x: 7, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 441048178}

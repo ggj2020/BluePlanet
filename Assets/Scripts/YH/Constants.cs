@@ -9,6 +9,8 @@
     public const int GRAVITY_DEFAULT = 30;
 
     public const float FOOTHOLD_WIDTH = 1;
+    public const float CHARACTER_RADIUS = 0.95f;
+    public const float FOOTHOLD_RADIUS = 0.49f;
 
     public const string TAG_FOOTHOLD = "Foothold";
     public const string TAG_GARBAGE = "Garbage";
