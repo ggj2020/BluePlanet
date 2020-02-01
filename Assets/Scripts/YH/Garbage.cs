@@ -18,6 +18,8 @@ public partial class Garbage : RunObject
 
     private void FixedUpdate()
     {
+        if ( !Statics.bPause ) return;
+
         float fDiff = Statics.playerUnit.position.x - position.x;
         if ( fDiff > 10 ) Destroy( gameObject );
     }

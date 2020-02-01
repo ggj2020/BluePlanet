@@ -11,9 +11,9 @@ public partial class CameraControl : MonoBehaviour
 {
     private void FixedUpdate()
     {
-        var targetPosition = playerUnit.position;
-        targetPosition.z = -10f;
-        targetPosition.x += 5f;
-        transform.position = targetPosition;
-    }
+		if ( !Statics.bPause ) return;
+
+        Vector3 vNewPos = Vector3.Lerp( transform.position, playerUnit.position, 0.1f );
+        vNewPos.z = -10;
+        transform.position = vNewPos;    }
 }
