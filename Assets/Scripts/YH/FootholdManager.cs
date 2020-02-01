@@ -44,4 +44,18 @@ public partial class FootholdManager : MonoBehaviour
 
         tFh.position += new Vector3( fFootholdTranslate, 0, 0 );
     }
+
+    public Foothold GetFootholdUnderneath( Vector3 vPos )
+    {
+        Foothold fh = null;
+
+        RaycastHit rh;
+        if ( Physics.Raycast( vPos, Vector3.down, out rh ) )
+        {
+            if ( rh.collider.CompareTag( Constant.TAG_FOOTHOLD ) )
+                fh = rh.collider.gameObject.GetComponent<Foothold>();
+        }
+
+        return fh;
+    }
 }

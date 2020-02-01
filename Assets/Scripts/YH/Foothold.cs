@@ -5,6 +5,7 @@ using UnityEngine;
 public partial class Foothold : RunObject
 {
     public int nFriction { get; private set; }
+    public Vector3 top { get { return position + 0.5f * Vector3.up; } }
 }
 
 public partial class Foothold : RunObject
