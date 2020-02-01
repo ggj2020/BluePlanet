@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 public class CsCameraShake : MonoBehaviour {
 
 
-    public struct ShakeCamera : IEvent { }
 
 
     public Properties testProperties;
