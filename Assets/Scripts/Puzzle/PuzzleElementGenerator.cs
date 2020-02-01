@@ -6,20 +6,22 @@ public class PuzzleElementGenerator : MonoBehaviour
 
     private string[] elements = new string[] {
         "Puzzle/Prefabs/Pentagon",
-        // "Puzzle/Prefabs/RoundedRectangle",
-        // "Puzzle/Prefabs/Triangle"
+        "Puzzle/Prefabs/RoundedRectangle",
+        "Puzzle/Prefabs/Triangle"
     };
 
     void OnEnable()
     {
         EventManager.StartListening(typeof(ShakePuzzleEvent), OnShake);
         EventManager.StartListening(typeof(GeneratePuzzleEvent), OnGenerate);
+        EventManager.StartListening(typeof(GarbageAcquireEvent), OnGenerate);
     }
 
     void OnDisable()
     {
         EventManager.StopListening(typeof(ShakePuzzleEvent), OnShake);
         EventManager.StopListening(typeof(GeneratePuzzleEvent), OnGenerate);
+        EventManager.StartListening(typeof(GarbageAcquireEvent), OnGarbageAcquire);
     }
 
     private void OnShake(IEvent param)
@@ -33,5 +35,15 @@ public class PuzzleElementGenerator : MonoBehaviour
     {
         GameObject prefab = Resources.Load<GameObject>(elements.Pick());
         Instantiate<GameObject>(prefab, transform);
+    }
+
+    private void OnGarbageAcquire(IEvent param)
+    {
+        if( param is GarbageAcquireEvent garbageAcquireEvent )
+        {
+            Debug.Log(garbageAcquireEvent.GetGarbageIdx());
+            GameObject prefab = Resources.Load<GameObject>(elements[garbageAcquireEvent.GetGarbageIdx()]);
+            Instantiate<GameObject>(prefab, transform);
+        }
     }
 }

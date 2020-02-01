@@ -5,10 +5,15 @@ using System.Collections.Generic;
 public interface IEvent{}
 public struct ShakePuzzleEvent : IEvent {}
 public struct GeneratePuzzleEvent : IEvent {}
+public struct TryJumpEvent : IEvent {}
 public struct GarbageAcquireEvent : IEvent 
 {
     int garbageIdx;
     public GarbageAcquireEvent(int garbageIdx) { this.garbageIdx = garbageIdx; }
+    public int GetGarbageIdx()
+    {
+        return garbageIdx;
+    }
 }
 public struct JumpEvent : IEvent {}
 
