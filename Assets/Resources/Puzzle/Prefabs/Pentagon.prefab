@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 6915516944431686749}
   - component: {fileID: 6915516944431686748}
   - component: {fileID: -5441736113825198745}
-  - component: {fileID: -7117118169309224673}
+  - component: {fileID: -6630077735217571230}
   m_Layer: 8
   m_Name: Pentagon
   m_TagString: Untagged
@@ -233,7 +233,7 @@ Transform:
   m_GameObject: {fileID: 6915516944431686751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 5237871859480442760}
   m_Father: {fileID: 0}
@@ -278,7 +278,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 46b6d92d7bfa24132a5fca02cbe42994, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 651120d55dc25466688a21964e1371a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -323,8 +323,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 4199416404781495246}
---- !u!60 &-7117118169309224673
-PolygonCollider2D:
+--- !u!58 &-6630077735217571230
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -337,42 +337,5 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
-    newSize: {x: 0.98, y: 0.92}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.6081831, y: -0.34136772}
-      - {x: 0.6351708, y: -0.25170153}
-      - {x: 0.6543881, y: -0.17797844}
-      - {x: 0.7083508, y: 0.02026739}
-      - {x: 0.7099848, y: 0.09042369}
-      - {x: 0.6507924, y: 0.20601484}
-      - {x: 0.5426156, y: 0.306508}
-      - {x: 0.2911486, y: 0.53209317}
-      - {x: 0.02203732, y: 0.72332495}
-      - {x: -0.030779215, y: 0.70607156}
-      - {x: -0.046755455, y: 0.6943397}
-      - {x: -0.11983259, y: 0.64360577}
-      - {x: -0.17829917, y: 0.59708446}
-      - {x: -0.24559739, y: 0.54594535}
-      - {x: -0.6085785, y: 0.2604547}
-      - {x: -0.6976119, y: 0.1931917}
-      - {x: -0.72589076, y: 0.13779646}
-      - {x: -0.71453756, y: 0.090149865}
-      - {x: -0.6764807, y: -0.066416785}
-      - {x: -0.5869539, y: -0.3790107}
-      - {x: -0.50850177, y: -0.5865498}
-      - {x: -0.48578098, y: -0.68028504}
-      - {x: -0.46678743, y: -0.7302327}
-      - {x: -0.410395, y: -0.7550696}
-      - {x: 0.40929073, y: -0.7234897}
-      - {x: 0.46166548, y: -0.6962187}
-      - {x: 0.5178037, y: -0.62283295}
-      - {x: 0.5442258, y: -0.52207434}
+  serializedVersion: 2
+  m_Radius: 0.8

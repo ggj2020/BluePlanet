@@ -4,7 +4,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Collider2D))]
+// [RequireComponent(typeof(Collider2D))]
 public class PuzzleElement : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private TextMeshPro textMeshPro = null;
@@ -26,6 +26,8 @@ public class PuzzleElement : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         this.contactedGameObject = null;
+        // var randomScale = Random.Range(0.9f, 1.1f);
+        // this.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
     }
 
     void OnCollisionStay2D(Collision2D collision2d)

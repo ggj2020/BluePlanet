@@ -216,7 +216,11 @@ GameObject:
   - component: {fileID: 6816902153781172941}
   - component: {fileID: 6816902153781172978}
   - component: {fileID: 8296794081747239510}
-  - component: {fileID: 3409996519368137992}
+  - component: {fileID: 8748940418961388170}
+  - component: {fileID: 9040713466746453869}
+  - component: {fileID: 8878003097788740115}
+  - component: {fileID: 7830114182658814038}
+  - component: {fileID: 6677286860349066223}
   m_Layer: 8
   m_Name: Triangle
   m_TagString: Untagged
@@ -233,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 6816902153781172977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 2941476175211196033}
   m_Father: {fileID: 0}
@@ -278,7 +282,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bccb2584df9c940f3aa9e7d48f5f5e8e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: caca238c559b249d8859935e3524f17d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -323,8 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 5971626334096826860}
---- !u!60 &3409996519368137992
-PolygonCollider2D:
+--- !u!70 &8748940418961388170
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -336,27 +340,70 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
-    newSize: {x: 0.98, y: 0.92}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.012620688, y: 0.6641206}
-      - {x: -0.088572554, y: 0.5168675}
-      - {x: -0.15804514, y: 0.37879264}
-      - {x: -0.29051334, y: 0.14468257}
-      - {x: -0.35486484, y: -0.0022467077}
-      - {x: -0.5329252, y: -0.36137405}
-      - {x: -0.63603395, y: -0.563742}
-      - {x: -0.71410227, y: -0.7192758}
-      - {x: -0.6551544, y: -0.7559504}
-      - {x: 0.6940507, y: -0.74941784}
-      - {x: 0.69553286, y: -0.6581845}
-      - {x: 0.04911268, y: 0.66026795}
+  m_Offset: {x: -0.16131704, y: 0.31990135}
+  m_Size: {x: 0.8298186, y: 0.6321487}
+  m_Direction: 1
+--- !u!70 &9040713466746453869
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816902153781172977}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.39, y: 0.04}
+  m_Size: {x: 0.8298186, y: 0.6321487}
+  m_Direction: 1
+--- !u!70 &8878003097788740115
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816902153781172977}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04, y: 0.46}
+  m_Size: {x: 0.8298186, y: 0.6321487}
+  m_Direction: 1
+--- !u!58 &7830114182658814038
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816902153781172977}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.48, y: -0.48}
+  serializedVersion: 2
+  m_Radius: 0.24
+--- !u!58 &6677286860349066223
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816902153781172977}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17, y: -0.14}
+  serializedVersion: 2
+  m_Radius: 0.27
