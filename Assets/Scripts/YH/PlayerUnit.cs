@@ -25,7 +25,7 @@ public partial class PlayerUnit : RunObject
     private int m_nJumpCount;
     private int m_nFootholdIdx;
 
-    private Vector3 bottom { get { return position + 0.49f * Vector3.down; } }
+    private Vector3 bottom { get { return position + Constant.CHARACTER_RADIUS * Vector3.down; } }
 }
 
 public partial class PlayerUnit : RunObject
@@ -45,6 +45,8 @@ public partial class PlayerUnit : RunObject
 
         m_nJumpCount = 0;
         m_nFootholdIdx = ( int )position.x;
+
+        EventManager.StartListening( typeof( JumpEvent ), Jump );
     }
 
     private void Start()
@@ -204,12 +206,12 @@ public partial class PlayerUnit : RunObject
 
         Foothold fh = Statics.footholdManager.GetFootholdUnderneath( position );
         if ( fh && bottom.y + nY < fh.top.y )
-            vPos.y = fh.top.y + 0.49f;
+            vPos.y = fh.top.y + Constant.CHARACTER_RADIUS;
 
         transform.position = vPos;
     }
 
-    private void Jump()
+    private void Jump( IEvent param = null )
     {
         if ( m_nJumpCount >= Constant.JUMPCOUNT_LIMIT ) 
             return;
@@ -218,7 +220,7 @@ public partial class PlayerUnit : RunObject
         m_bAttatchedOnFoothold = false;
         ++m_nJumpCount;
 
-        if ( m_nJumpCount == 2 ) 
+        if ( m_nJumpCount == Constant.JUMPCOUNT_LIMIT ) 
             EventManager.TriggerEvent( new ShakePuzzleEvent() );
     }
 

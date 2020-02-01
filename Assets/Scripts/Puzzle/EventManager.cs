@@ -10,6 +10,7 @@ public struct GarbageAcquireEvent : IEvent
     int garbageIdx;
     public GarbageAcquireEvent(int garbageIdx) { this.garbageIdx = garbageIdx; }
 }
+public struct JumpEvent : IEvent {}
 
 public class EventHandler: UnityEvent<IEvent> {}
 
