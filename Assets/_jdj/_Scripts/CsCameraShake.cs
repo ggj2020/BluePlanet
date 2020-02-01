@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CsCameraShake : MonoBehaviour {
+
+
+    public struct ShakeCamera : IEvent { }
 
 
     public Properties testProperties;
@@ -15,14 +19,30 @@ public class CsCameraShake : MonoBehaviour {
     Coroutine coroutineShake;
 
 
+    /*
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartShake(testProperties);
+            EventManager.TriggerEvent(new ShakeCamera());
         }
     }
+    */
 
+    private void OnEnable()
+    {
+        EventManager.StartListening(typeof(ShakeCamera), RunShakeCamera);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.StopListening(typeof(ShakeCamera), RunShakeCamera);
+    }
+
+
+    void RunShakeCamera(IEvent param) {
+        StartShake(testProperties);
+    }
 
     public void StartShake(Properties properties) {
 		if (currentShakeCoroutine != null) {
