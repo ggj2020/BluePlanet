@@ -24,6 +24,8 @@ public partial class PlayerUnit : RunObject
 
     private int m_nJumpCount;
     private int m_nFootholdIdx;
+
+    private Vector3 bottom { get { return position + 0.49f * Vector3.down; } }
 }
 
 public partial class PlayerUnit : RunObject
@@ -45,20 +47,25 @@ public partial class PlayerUnit : RunObject
         m_nFootholdIdx = ( int )position.x;
     }
 
+    private void Start()
+    {
+        OnStartGame();
+    }
+
     private void Update()
     {
-        if ( Input.GetKeyDown( KeyCode.LeftArrow ) )
-            OnInputDown( INPUT.MOVE_LEFT );
-        if ( Input.GetKeyDown( KeyCode.RightArrow ) )
-            OnInputDown( INPUT.MOVE_RIGHT );
+        //if ( Input.GetKeyDown( KeyCode.LeftArrow ) )
+        //    OnInputDown( INPUT.MOVE_LEFT );
+        //if ( Input.GetKeyDown( KeyCode.RightArrow ) )
+        //    OnInputDown( INPUT.MOVE_RIGHT );
 
         if ( Input.GetKeyDown( KeyCode.Space ) )
             OnInputDown( INPUT.JUMP_UP );
 
-        if ( Input.GetKeyUp( KeyCode.LeftArrow ) )
-            OnInputUp( INPUT.MOVE_LEFT );
-        if ( Input.GetKeyUp( KeyCode.RightArrow ) )
-            OnInputUp( INPUT.MOVE_RIGHT );
+        //if ( Input.GetKeyUp( KeyCode.LeftArrow ) )
+        //    OnInputUp( INPUT.MOVE_LEFT );
+        //if ( Input.GetKeyUp( KeyCode.RightArrow ) )
+        //    OnInputUp( INPUT.MOVE_RIGHT );
     }
     private void FixedUpdate()
     {
@@ -172,7 +179,9 @@ public partial class PlayerUnit : RunObject
             Garbage g = c.gameObject.GetComponent<Garbage>();
             if ( g && g.bActive )
             {
-                //Debug.Log( $"{g.objectIndex} get!" );
+                new GarbageAcquireEvent();
+                EventManager.TriggerEvent( new GarbageAcquireEvent( g.objectIndex ) );
+
                 g.Deactivate();
                 Destroy( c.gameObject );
             }
@@ -192,6 +201,11 @@ public partial class PlayerUnit : RunObject
         Vector3 vPos = transform.position;
         vPos.x += nX;
         vPos.y += nY;
+
+        Foothold fh = Statics.footholdManager.GetFootholdUnderneath( position );
+        if ( fh && bottom.y + nY < fh.top.y )
+            vPos.y = fh.top.y + 0.49f;
+
         transform.position = vPos;
     }
 
@@ -203,6 +217,9 @@ public partial class PlayerUnit : RunObject
         m_vVel.y = Constant.JUMPSPEED_DEFAULT;
         m_bAttatchedOnFoothold = false;
         ++m_nJumpCount;
+
+        if ( m_nJumpCount == 2 ) 
+            EventManager.TriggerEvent( new ShakePuzzleEvent() );
     }
 
     private int GetFriction()
@@ -212,4 +229,6 @@ public partial class PlayerUnit : RunObject
     }
 
     private bool IsOnFoothold() { return m_lFhCurrent.Count > 0; }
+
+    public void OnStartGame() { m_bRMoveInput = true; }
 }

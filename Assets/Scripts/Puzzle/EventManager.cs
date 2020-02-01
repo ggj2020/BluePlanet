@@ -5,6 +5,11 @@ using System.Collections.Generic;
 public interface IEvent{}
 public struct ShakePuzzleEvent : IEvent {}
 public struct GeneratePuzzleEvent : IEvent {}
+public struct GarbageAcquireEvent : IEvent 
+{
+    int garbageIdx;
+    public GarbageAcquireEvent(int garbageIdx) { this.garbageIdx = garbageIdx; }
+}
 
 public class EventHandler: UnityEvent<IEvent> {}
 
