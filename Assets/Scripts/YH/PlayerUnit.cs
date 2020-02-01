@@ -201,6 +201,7 @@ public partial class PlayerUnit : RunObject
             Garbage g = c.gameObject.GetComponent<Garbage>();
             if ( g && g.bActive )
             {
+                Statics.soundManager.Play( AUDIOTYPE.GETOBJECT );
                 EventManager.TriggerEvent( new GarbageAcquireEvent( g.objectIndex ) );
                 g.Deactivate();
                 Destroy( c.gameObject );
@@ -238,11 +239,14 @@ public partial class PlayerUnit : RunObject
         m_bAttatchedOnFoothold = false;
         ++m_nJumpCount;
 
-        if (m_nJumpCount == Constant.JUMPCOUNT_LIMIT)
+        if ( m_nJumpCount == Constant.JUMPCOUNT_LIMIT )
         {
-            EventManager.TriggerEvent(new ShakePuzzleEvent());
-            EventManager.TriggerEvent(new ShakeCamera());
+            Statics.soundManager.Play( AUDIOTYPE.SHAKE );
+            EventManager.TriggerEvent( new ShakePuzzleEvent() );
+            EventManager.TriggerEvent( new ShakeCamera() );
         }
+        
+        Statics.soundManager.Play( AUDIOTYPE.JUMP );
     }
 
     private int GetFriction()
