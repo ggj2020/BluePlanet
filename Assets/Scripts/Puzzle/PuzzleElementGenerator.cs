@@ -41,6 +41,7 @@ public class PuzzleElementGenerator : MonoBehaviour
     {
         if( param is GarbageAcquireEvent garbageAcquireEvent )
         {
+            Debug.Log(garbageAcquireEvent.GetGarbageIdx());
             GameObject prefab = Resources.Load<GameObject>(elements[garbageAcquireEvent.GetGarbageIdx()]);
             Instantiate<GameObject>(prefab, transform);
         }

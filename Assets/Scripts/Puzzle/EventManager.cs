@@ -15,6 +15,7 @@ public struct GarbageAcquireEvent : IEvent
         return garbageIdx;
     }
 }
+public struct JumpEvent : IEvent {}
 
 public class EventHandler: UnityEvent<IEvent> {}
 
