@@ -14,10 +14,16 @@ public partial class UIControl : MonoBehaviour
     public Button BtnPause;
     public Button BtnResume;
     public Button BtnTitle;
+
+    public Material MatProgress;
 }
 
 public partial class UIControl : MonoBehaviour
 {
+    private void Awake()
+    {
+        Statics.uiControl = this;
+    }
     private void Start()
     {
         BtnPause.onClick.AddListener( () => 
@@ -42,18 +48,31 @@ public partial class UIControl : MonoBehaviour
             Statics.soundManager.Play( AUDIOTYPE.BUTTONCLICK );
             SceneManager.LoadScene( "Menu", LoadSceneMode.Single );
         } );
+
+        OnStageStart();
+    }
+
+    private void FixedUpdate()
+    {
+        float fCurrentHeight = MatProgress.GetFloat( "_Height" );
+        float fTargetHeight = ( float )Statics.nProgress / Constant.PROGRESS_MAX;
+        MatProgress.SetFloat( "_Height", Mathf.Lerp( fCurrentHeight, fTargetHeight, 0.1f ) );
     }
 
     public void OnStageStart()
     {
+        Transform tText = UIStatus.transform.Find( "Text" );
+        Text text = tText.GetComponent<Text>();
+        text.text = $"<color=#0000FF>easy</color> <color=#ff0000>STAGE:{Statics.nStage}\n</color>";
+
         StartCoroutine( CoroUIStageInfo( true ) );
     }
     public void OnStageEnd()
     {
-        StartCoroutine( CoroUIStageInfo( false, 100 ) );
+        StartCoroutine( CoroUIStageInfo( false ) );
     }
 
-    private IEnumerator CoroUIStageInfo( bool bStart, int nProgress = 0 )
+    private IEnumerator CoroUIStageInfo( bool bStart )
     {
         UIStageInfo.SetActive( true );
         Transform tText = UIStageInfo.transform.Find( "Text" );
@@ -63,8 +82,8 @@ public partial class UIControl : MonoBehaviour
         int nAlpha = ( int )( c.a * 255.0f );
         text.color = c;
 
-        string sStep = bStart ? "START!" : $"{nProgress}%\nREPAIR!";
-        text.text = $"<color=#0000FF{nAlpha.ToString("X2")}>easy</color> <color=#ff0000{nAlpha.ToString( "X2" )}>STAGE:1\n{sStep}</color>";
+        string sStep = bStart ? "START!" : $"{Statics.nProgress}%\nREPAIR!";
+        text.text = $"<color=#0000FF{nAlpha.ToString("X2")}>easy</color> <color=#ff0000{nAlpha.ToString( "X2" )}>STAGE:{Statics.nStage}\n{sStep}</color>";
 
         bool bFadeIn = true;
 
@@ -80,7 +99,7 @@ public partial class UIControl : MonoBehaviour
                     yield return new WaitForSeconds( 1 );
                 }
                 nAlpha = ( int )( c.a * 255.0f );
-                text.text = $"<color=#0000FF{nAlpha.ToString( "X2" )}>easy</color> <color=#ff0000{nAlpha.ToString( "X2" )}>STAGE:1\n{sStep}</color>";
+                text.text = $"<color=#0000FF{nAlpha.ToString( "X2" )}>easy</color> <color=#ff0000{nAlpha.ToString( "X2" )}>STAGE:{Statics.nStage}\n{sStep}</color>";
             }
             else
             {
@@ -92,12 +111,20 @@ public partial class UIControl : MonoBehaviour
                     break;
                 }
                 nAlpha = ( int )( c.a * 255.0f );
-                text.text = $"<color=#0000FF{nAlpha.ToString( "X2" )}>easy</color> <color=#ff0000{nAlpha.ToString( "X2" )}>STAGE:1\n{sStep}</color>";
+                text.text = $"<color=#0000FF{nAlpha.ToString( "X2" )}>easy</color> <color=#ff0000{nAlpha.ToString( "X2" )}>STAGE:{Statics.nStage}\n{sStep}</color>";
             }
             
             yield return new WaitForSeconds( 0 );
         }
 
         UIStageInfo.SetActive( false );
+
+        if ( !bStart )
+        {
+            Statics.nStage++;
+            Statics.nProgress = 0;
+
+            SceneManager.LoadScene( "Run", LoadSceneMode.Single );
+        }
     }
 }

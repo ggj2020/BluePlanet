@@ -93,6 +93,9 @@ public partial class PlayerUnit : RunObject
 
         FUpdateMovement();
         FUpdateFoothold();
+
+        if ( Statics.nProgress >= 100 ) 
+            Statics.uiControl.OnStageEnd();
     }
     private void FUpdateMovement()
     {
