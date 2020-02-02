@@ -204,6 +204,10 @@ public partial class PlayerUnit : RunObject
             Garbage g = c.gameObject.GetComponent<Garbage>();
             if ( g && g.bActive )
             {
+                EventManager.TriggerEvent(new SetEffect(CsEffectManager.EffectType.GetItem, g.position + Random.insideUnitSphere * 0.5f));
+                EventManager.TriggerEvent(new SetEffect(CsEffectManager.EffectType.GetItem, g.position + Random.insideUnitSphere * 0.5f));
+                EventManager.TriggerEvent(new SetEffect(CsEffectManager.EffectType.GetItem, g.position + Random.insideUnitSphere * 0.5f));
+
                 Statics.soundManager.Play( AUDIOTYPE.GETOBJECT );
                 EventManager.TriggerEvent( new GarbageAcquireEvent( g.objectIndex ) );
                 g.Deactivate();

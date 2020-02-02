@@ -8,13 +8,10 @@ public class CsTerrainScroll : MonoBehaviour
     public List<TerrainCollider> terrainColliders;
 
 
-    private Transform cameraTrans;
+    public Transform cameraTrans;
 
     private void Awake()
     {
-        cameraTrans = Camera.main.transform;
-
-
         terrainColliders = new List<TerrainCollider>();
         for (int i = 0; i < terrains.Count; i++)
         {
@@ -30,9 +27,10 @@ public class CsTerrainScroll : MonoBehaviour
         //41.5f
         for (int i = 0; i < terrains.Count; i++)
         {
-            if (terrainColliders[i].bounds.center.x < cameraTrans.position.x - 41.5f * 0.5f)
+            //if (terrainColliders[i].bounds.center.x < cameraTrans.position.x - 41.5f * 0.5f)
+            if (terrainColliders[i].bounds.center.x < Statics.playerUnit.position.x - 41.5f * 0.5f)
             {
-                terrains[i].position += 3.0f * 41.5f * Vector3.right;
+                terrains[i].position += 1.0f * 41.5f * Vector3.right;
             }
         }
     }
