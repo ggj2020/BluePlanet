@@ -18,11 +18,6 @@ public class CsEffectManager : MonoBehaviour
     }
 
 
-    private void Awake()
-    {
-        emHobering = psHobering.emission;
-    }
-
 
     //private void Update()
     //{
@@ -37,6 +32,8 @@ public class CsEffectManager : MonoBehaviour
 
         switch (_param.effectType) {
             case EffectType.Hovering:
+                emHobering = psHobering.emission;
+                emHobering.enabled = !emHobering.enabled;
                 break;
             case EffectType.GetItem:
                 Instantiate(psGetItem, _param.position, Quaternion.identity);
