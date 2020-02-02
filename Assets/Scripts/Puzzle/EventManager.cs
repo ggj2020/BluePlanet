@@ -6,6 +6,7 @@ public interface IEvent{}
 public struct ShakePuzzleEvent : IEvent {}
 public struct GeneratePuzzleEvent : IEvent {}
 public struct TryJumpEvent : IEvent {}
+public struct GameOverEvent : IEvent {}
 
 
 

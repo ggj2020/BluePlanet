@@ -26,22 +26,46 @@ public class PuzzleElementGenerator : MonoBehaviour
 
     private void OnShake(IEvent param)
     {
+        if ( isGameOver )
+        {
+            return;
+        }
+        
         GetComponentsInChildren<Rigidbody2D>().ToList().ForEach((rigidBody2d) => {
             rigidBody2d.AddForce(new Vector2(Random.Range(-5f, 5f), Random.Range(5f, 10f)), ForceMode2D.Impulse);
         });
     }
 
+    bool isGameOver = false;
+
     private void OnGenerate(IEvent param)
     {
-        GameObject prefab = Resources.Load<GameObject>(elements.Pick());
-        Instantiate<GameObject>(prefab, transform);
+        if ( isGameOver )
+        {
+            return;
+        }
+
+        if ( transform.childCount < 20 )
+        {
+            GameObject prefab = Resources.Load<GameObject>(elements.Pick());
+            Instantiate<GameObject>(prefab, transform);
+        }
+        else
+        {
+            isGameOver = true;
+            EventManager.TriggerEvent(new GameOverEvent());
+        }
     }
 
     private void OnGarbageAcquire(IEvent param)
     {
+        if ( isGameOver )
+        {
+            return;
+        }
+        
         if( param is GarbageAcquireEvent garbageAcquireEvent )
         {
-            Debug.Log(garbageAcquireEvent.GetGarbageIdx());
             GameObject prefab = Resources.Load<GameObject>(elements[garbageAcquireEvent.GetGarbageIdx()]);
             Instantiate<GameObject>(prefab, transform);
         }

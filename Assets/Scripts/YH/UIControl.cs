@@ -24,6 +24,14 @@ public partial class UIControl : MonoBehaviour
     {
         Statics.uiControl = this;
     }
+    void OnEnable()
+    {
+        EventManager.StartListening(typeof(GameOverEvent), OnStageEnd);
+    }
+    void OnDisable()
+    {
+        EventManager.StopListening(typeof(GameOverEvent), OnStageEnd);
+    }
     private void Start()
     {
         BtnPause.onClick.AddListener( () => 
@@ -67,7 +75,7 @@ public partial class UIControl : MonoBehaviour
 
         StartCoroutine( CoroUIStageInfo( true ) );
     }
-    public void OnStageEnd()
+    private void OnStageEnd(IEvent param)
     {
         StartCoroutine( CoroUIStageInfo( false ) );
     }

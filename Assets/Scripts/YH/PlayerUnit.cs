@@ -95,7 +95,9 @@ public partial class PlayerUnit : RunObject
         FUpdateFoothold();
 
         if ( Statics.nProgress >= 100 ) 
-            Statics.uiControl.OnStageEnd();
+        {
+            EventManager.TriggerEvent(new GameOverEvent());
+        }
     }
     private void FUpdateMovement()
     {
