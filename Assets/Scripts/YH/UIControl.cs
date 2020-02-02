@@ -96,7 +96,7 @@ public partial class UIControl : MonoBehaviour
                 {
                     bFadeIn = false;
                     c.a = 1;
-                    yield return new WaitForSeconds( 1 );
+                    yield return new WaitForSeconds( 2 );
                 }
                 nAlpha = ( int )( c.a * 255.0f );
                 text.text = $"<color=#0000FF{nAlpha.ToString( "X2" )}>easy</color> <color=#ff0000{nAlpha.ToString( "X2" )}>STAGE:{Statics.nStage}\n{sStep}</color>";
