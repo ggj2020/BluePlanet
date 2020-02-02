@@ -4,8 +4,11 @@ public class PuzzleWorld : MonoBehaviour
 {
     void Start()
     {
-         var rightCornor = new Vector3(Screen.width, 0, transform.position.z);
-        transform.position = Camera.main.ScreenToWorldPoint(rightCornor);
+        var rightCornor = new Vector3(Screen.width, 0, transform.position.z);
+        var newPos = Camera.main.ScreenToWorldPoint(rightCornor);
+        newPos.x -= (GetComponent<SpriteRenderer>().bounds.size.x+2);
+        newPos.y -= GetComponent<SpriteRenderer>().bounds.size.y/2;
+        transform.position = newPos;
     }
 
     void Update()
