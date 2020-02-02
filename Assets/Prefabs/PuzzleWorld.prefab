@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7100851303980347086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: -1}
+  m_LocalPosition: {x: -0.18, y: -5.33, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7100851303598257242}
@@ -345,7 +345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33827abae2969484bb8cf89d0f00bcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderTextureCamera: {fileID: 0}
 --- !u!1 &7100851304817313652
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7100851304817313652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalPosition: {x: -3.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7100851303598257242}
