@@ -83,7 +83,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Height: 6e-45
+    - _Height: 0.15999994
     - _LightSpeed: 0.58
     - _LightThickness: 0.494
     - _Metallic: 0

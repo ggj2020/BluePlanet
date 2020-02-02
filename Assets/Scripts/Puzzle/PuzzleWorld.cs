@@ -2,7 +2,6 @@
 
 public class PuzzleWorld : MonoBehaviour
 {
-    [SerializeField] private Camera renderTextureCamera = null;
     void Start()
     {
          var rightCornor = new Vector3(Screen.width, 0, transform.position.z);

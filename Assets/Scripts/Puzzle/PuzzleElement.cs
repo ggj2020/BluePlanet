@@ -15,9 +15,7 @@ public class PuzzleElement : MonoBehaviour, IPointerClickHandler
         }
         set 
         {
-            var material = GetComponent<SpriteRenderer>().material;
-            material.SetFloat("_OutlineBrightness", value == null ? 0f : 2.8f);
-            material.SetFloat("_OutlineWidth", value == null ? 0f : 0.0156f);
+            this.GetComponent<SpriteRenderer>().color = value == null ? Color.white : Color.green;
             this._contactedGameObject = value;
         }
     }
@@ -57,6 +55,7 @@ public class PuzzleElement : MonoBehaviour, IPointerClickHandler
 
     private void DestroyGameObjects(params GameObject[] gameObjects)
     {
+        Statics.nProgress += (gameObjects.Length*2);
         gameObjects.ToList().ForEach(Destroy);
     }
 }
