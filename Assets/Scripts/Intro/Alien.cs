@@ -13,13 +13,26 @@ public class Alien : MonoBehaviour
     [SerializeField] private SpriteRenderer effectVacuum = null;
 
     [SerializeField] private SpriteRenderer weapon = null;
+    [SerializeField] private SpriteRenderer alien;
+    [SerializeField] private Sprite alienRun1;
+    [SerializeField] private Sprite alienRun2;
 
-    [SerializeField] private Sprite happy = null;
-    [SerializeField] private Sprite sad = null;
-    [SerializeField] private Sprite decided = null;
+    IEnumerator PlayAnimation()
+    {
+        while(true)
+        {
+            alien.sprite = alienRun2;
+            yield return new WaitForSeconds(0.1f);
+
+            alien.sprite = alienRun1;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 
     void Start()
     {
+        StartCoroutine(PlayAnimation());
+
         this.weapon.gameObject.SetActive(false);
         this.effectVacuum.gameObject.SetActive(false);
         this.effectLandingOnEarth.gameObject.SetActive(false);
@@ -27,26 +40,6 @@ public class Alien : MonoBehaviour
         this.alertBrokenSpaceship.gameObject.SetActive(false);
         this.alertDecideSomething.gameObject.SetActive(false);
         this.alertFoundBluePlanet.gameObject.SetActive(false);
-    }
-
-    private Sprite GetCharacterEmotionSprite(CharacterEmotionState state)
-    {
-        if ( state == CharacterEmotionState.Happy )
-        {
-            return this.happy;
-        }
-        else if ( state == CharacterEmotionState.Sad )
-        {
-            return this.sad;
-        }
-        else if ( state == CharacterEmotionState.Decided )
-        {
-            return this.decided;
-        }
-        else
-        {
-            return null;
-        }
     }
 
     private GameObject GetAlertGameObject(AlertType alertType)
@@ -72,12 +65,6 @@ public class Alien : MonoBehaviour
 
     public void Show(Cut cut)
     {
-        var characterEmotionSprite = GetCharacterEmotionSprite(cut.characterEmotionState);
-        if ( characterEmotionSprite != null )
-        {
-            GetComponent<SpriteRenderer>().sprite = characterEmotionSprite;
-        }
-
         if ( cut.characterActionState == CharacterActionState.VacuumSomethings )
         {
             this.weapon.gameObject.SetActive(true);
