@@ -14,6 +14,16 @@ public struct ShakeCamera : IEvent { }
 public struct SetCharacterHoveringState_Idle : IEvent { }
 public struct SetCharacterHoveringState_danger : IEvent { }
 
+public struct SetEffect : IEvent {
+    public SetEffect(CsEffectManager.EffectType effectType, UnityEngine.Vector3 position) {
+        this.effectType = effectType;
+        this.position = position;
+    }
+    public CsEffectManager.EffectType effectType;
+    public UnityEngine.Vector3 position;
+}
+
+
 
 public struct GarbageAcquireEvent : IEvent 
 {
