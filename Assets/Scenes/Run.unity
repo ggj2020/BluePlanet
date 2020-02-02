@@ -1332,6 +1332,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &716317187 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4742507697826438030, guid: 67ff5e10c7dbc4baaa5b4c64ed685970,
+    type: 3}
+  m_PrefabInstance: {fileID: 888123871}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &794589868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1339,15 +1351,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1943224396, guid: 0de734d184aae46e38535dbc93df245c, type: 3}
+      propertyPath: renderTarget
+      value: 
+      objectReference: {fileID: 716317187}
     - target: {fileID: 4551628268620950774, guid: 0de734d184aae46e38535dbc93df245c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.61
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 4551628268620950774, guid: 0de734d184aae46e38535dbc93df245c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4551628268620950774, guid: 0de734d184aae46e38535dbc93df245c,
         type: 3}
@@ -1731,6 +1747,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4742507696530064844, guid: 67ff5e10c7dbc4baaa5b4c64ed685970,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742507696530064844, guid: 67ff5e10c7dbc4baaa5b4c64ed685970,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4742507696530064846, guid: 67ff5e10c7dbc4baaa5b4c64ed685970,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1835,6 +1861,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742507697826438028, guid: 67ff5e10c7dbc4baaa5b4c64ed685970,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742507697826438030, guid: 67ff5e10c7dbc4baaa5b4c64ed685970,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742507697826438030, guid: 67ff5e10c7dbc4baaa5b4c64ed685970,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67ff5e10c7dbc4baaa5b4c64ed685970, type: 3}
@@ -3372,7 +3413,7 @@ PrefabInstance:
     - target: {fileID: 7100851304533653433, guid: 90ad90cfc8ea944058f62206493d25f3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 7100851304533653433, guid: 90ad90cfc8ea944058f62206493d25f3,
         type: 3}

@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PuzzleRenderTextureCamera : MonoBehaviour
 {
+    [SerializeField] private RawImage renderTarget = null;
     void Start()
     {
-        var targetTexture = GetComponent<Camera>().targetTexture;
-        targetTexture.width = Screen.width;
-        targetTexture.height = Screen.height;
+        var targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        GetComponent<Camera>().targetTexture = targetTexture;
+        renderTarget.texture = targetTexture;
+        renderTarget.SetNativeSize();
+        renderTarget.gameObject.SetActive(true);
     }
 }

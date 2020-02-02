@@ -67,7 +67,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 1280
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 4f2a1a8c5d8024286bb3beca79943612, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -136,3 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c298a2aaa3b34e0ba66c73a07929d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderTarget: {fileID: 0}
