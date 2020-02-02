@@ -79,7 +79,7 @@ public class Intro : MonoBehaviour, IPointerClickHandler
     {
         if ( cuts.Count == 0 )
         {
-            SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+            SceneManager.LoadScene("Title", LoadSceneMode.Single);
         }
         else
         {
